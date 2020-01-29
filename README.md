@@ -7,7 +7,7 @@
 To install, use the following to pull the package in via Composer.
 
 ```
-composer require ad/youtube:dev-master
+composer require leonardooleg/youtube:dev-master
 ```
 
 
@@ -16,7 +16,7 @@ Now register the Service provider in `config/app.php`
 ```php
 'providers' => [
     ...
-    ad\Youtube\YoutubeAPIServiceProvider::class,
+    leonardooleg\Youtube\YoutubeAPIServiceProvider::class,
 ],
 ```
 
@@ -25,7 +25,7 @@ And also add the alias to the same file.
 ```php
 'aliases' => [
     ...
-    'YoutubeAPI'=>ad\Youtube\Facades\YoutubeAPI::class,
+    'YoutubeAPI'=>leonardooleg\Youtube\Facades\YoutubeAPI::class,
 ],
 ```
 
@@ -34,7 +34,7 @@ And also add the alias to the same file.
 You now need to publish the `youtubeAPI.php` config and migrations.
 
 ```
-php artisan vendor:publish --provider="ad\Youtube\YoutubeAPIServiceProvider"
+php artisan vendor:publish --provider="leonardooleg\Youtube\YoutubeAPIServiceProvider"
 ```
 
 Now you'll want to run `php artisan migrate` to create the `youtube_access_tokens` table which as you would imagine, will contain your access tokens once you're authenticated correctly.
